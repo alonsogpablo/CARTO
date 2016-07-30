@@ -1,6 +1,6 @@
 from cartodb import CartoDBAPIKey, CartoDBException
 
-API_KEY ='a89973f57166ad09cc6f1b6004962dbbc0076c0c'
+API_KEY =''
 cartodb_domain = 'palonso0vf'
 cl = CartoDBAPIKey(API_KEY, cartodb_domain)
 #try:

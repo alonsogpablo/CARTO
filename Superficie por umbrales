@@ -1,6 +1,8 @@
 SELECT 
-    sum(ST_Area(ST_Intersection(lte_plus_100_109_112_nacional_31032016.the_geom, ign_spanish_adm3_municipalities.the_geom::geography)))/1000000 area, 
-    lte_plus_100_109_112_nacional_31032016.threshold 
-FROM lte_plus_100_109_112_nacional_31032016, ign_spanish_adm3_municipalities
-WHERE ST_Intersects(lte_plus_100_109_112_nacional_31032016.the_geom, ign_spanish_adm3_municipalities.the_geom) and ign_spanish_adm3_municipalities.nameunit='Valladolid'
-GROUP BY lte_plus_100_109_112_nacional_31032016.threshold
+      ST_Area(
+        ST_Intersection(l.the_geom::geography, m.the_geom::geography))/1000000 area, 
+    l.threshold,
+    m.nameunit
+FROM lte_plus_100_109_112_nacional_31032016 l, ign_spanish_adm3_municipalities m
+WHERE l.the_geom && m.the_geom
+AND nameunit='Almería'

@@ -19,7 +19,7 @@ def cartoBatchStatus(username, api_key, job_id):
 
 
 username = 'palonso0vf'
-api_key = 'a89973f57166ad09cc6f1b6004962dbbc0076c0c'
+api_key = ''
 
 sql="SELECT * INTO TEST FROM es WHERE name='Valladolid'"
 

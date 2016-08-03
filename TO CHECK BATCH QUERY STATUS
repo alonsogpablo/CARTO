@@ -1,0 +1,1 @@
+curl -X GET "http://palonso0vf.cartodb.com/api/v2/sql/job/1a3b3b24-0545-4002-afad-3be24c4b2a76?api_key=XXXXXX"

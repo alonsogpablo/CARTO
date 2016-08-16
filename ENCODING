@@ -1,0 +1,11 @@
+ASCII - TYPE STRING  / s
+UTF-8 - TYPE STRING (EXTENDED ASCII)  /ut
+UNICODE - NUMERIC REPRESENTATION OF TEXT. TYPE UNICODE (NOT STRING)   /uni
+
+
+FROM ASCII TO UTF-8: ut=s.encode('utf-8')
+
+FROM UTF-8 TO UNICODE: uni=ut.decode('utf-8')
+
+FROM UNICODE TO UTF-8 ut=uni.encode('utf-8')
+

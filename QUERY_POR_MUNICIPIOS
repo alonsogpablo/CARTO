@@ -1,0 +1,29 @@
+from cartodb import CartoDBAPIKey, CartoDBException
+
+API_KEY =''
+cartodb_domain = 'palonso0vf'
+cl = CartoDBAPIKey(API_KEY, cartodb_domain)
+#try:
+
+
+#except CartoDBException as e:
+#   print("some error ocurred", e)
+
+#Peticion SQL
+petition = ("""SELECT * FROM TEEST3""")
+
+
+catch = (cl.sql(petition))
+for f in catch['rows']:
+    petition="""
+    SELECT
+      ST_Area(
+        ST_Intersection(l.the_geom::geography, m.the_geom::geography))/1000000 area,
+    l.threshold,
+    m.nameunit INTO TEST_16_8
+FROM lte_plus_100_109_112_nacional_31032016 l, ign_spanish_adm3_municipalities m
+WHERE l.the_geom && m.the_geom
+AND nameunit like '%s'
+    """%f['nameunit'].encode('utf-8')
+    #catch = (cl.sql(petition))
+    #print catch

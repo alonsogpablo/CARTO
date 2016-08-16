@@ -1,6 +1,6 @@
-ASCII - TYPE STRING  / s
-UTF-8 - TYPE STRING (EXTENDED ASCII)  /ut
-UNICODE - NUMERIC REPRESENTATION OF TEXT. TYPE UNICODE (NOT STRING)   /uni
+ASCII - TYPE STRING  type(ascii_string)=str
+UTF-8 - TYPE STRING (EXTENDED ASCII)  type(utf8_string)=str
+UNICODE - NUMERIC REPRESENTATION OF TEXT. TYPE UNICODE (NOT STRING)   type(unicode_string)=unicode
 
 Aunque hagamos s='Aznalcóyar', Python lo pasa a utf-8: 'Aznalc\xc3\xb3yar'
 

@@ -1,0 +1,1 @@
+SELECT row_number() over () as cartodb_id,the_geom,the_geom_webmercator,cp,count(*) as subcasos_en_mismo_cp,avg(replace(edad_subcaso,',','.')::numeric) as edad_media, min(inc) FROM subcasos_2 where estado <> 'Resuelto' group by  the_geom,the_geom_webmercator,cp
